@@ -1,0 +1,107 @@
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,img,button,select{margin:0;padding:0}
+body,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,button{font-family: 'Oxygen', sans-serif;}
+/* body{min-width:1280px;-webkit-text-size-adjust:none} */
+img,fieldset{border:0;vertical-align:top}
+ul,ol,li{list-style:none}
+a{text-decoration:none;color:#000}
+
+.header{background:#2e2e2e;text-align:center;padding:20px}
+.header h1 a{display:inline-block;font-family:'Playfair Display', serif;color:#fff;padding:10px 20px}
+.container{position:relative;}
+.navbar{position:absolute;top:300px;left:-150px;transform:rotate(90deg);z-index:1;}
+.navbar .main_nav li{display:inline-block;margin:0 15px 0 0;}
+.navbar .main_nav li:last-of-type{margin-right:0}
+.navbar .main_nav li a{padding:6px 10px;border-radius:3px}
+.navbar .main_nav li:hover a, .navbar .main_nav li.active a{color:#fff;background:#B0C4DE;box-shadow:2px 0 5px rgba(0,0,0,.2)}
+.content{position:relative;width:100%;padding:20px 0;margin:auto;}
+
+/*  */
+.content.st_life{background:#f5edea;}
+.content.st_life .frame{position:relative;width:500px;height:500px;border:1px solid #000;padding:50px;margin:auto;}
+.content.st_life .apple{position:relative;width:400px;height:410px;border-radius:55% 45% 45% 55% / 50% 50%;background:transparent radial-gradient(at 20% 20%, rgba(245, 0, 0, 0.7) 28%, rgba(216, 0, 1, 0.5) 60%, #DB851B 90%);}
+.content.st_life .apple *{position:absolute;}
+.content.st_life .apple .lyr_01{top:30px;left:40px;width:250px;height:120px;border-radius:10% 80% 75% 25% / 25% 26% 74% 75%; background:transparent radial-gradient(rgba(190, 34, 45, 0.8) 70%, rgba(190, 34, 45, 0) 100%)}
+
+.content.st_life .shadow{position:absolute;bottom:100px;left:100px;width:300px;height:100px;border-radius:50%;background:transparent radial-gradient(at 40% 20%, rgba(86,49,23,0.4) 11%, rgba(80,80,80,0.1) 57%, rgba(80,80,80,0) 68%)}
+
+
+/* test */
+.test{display:grid;place-content:center;padding-top:40px}
+
+graph{width:400px;height:400px;border:10px double #000;border-radius:50%;position:relative;overflow:hidden;background:linear-gradient(#000, #000) 50% / 100% 2px no-repeat;text-transform:uppercase;line-height:1;
+    --circle-up-path: path('M 0 200 A 200 200 0 0 1 400 200');
+    --circle-down-path: path('M 0 200 A 200 200 0 0 0 400 200');}
+  graph:before {content:'';position:absolute;top:50%;left:50%;width:58%;height:58%;transform:translate(-50%, -50%) rotate(-135deg);border:6px double;border-radius:50%;border-color: #000 transparent transparent #000;}
+  graph:after {content:'♥';position:absolute;left:50%;top:50%;transform:translate(-50%, -50%);font-size:80px;color:transparent;text-shadow:0 0 #000;font-family: 'Nanum Gothic', sans-serif;}
+
+[split] > * {
+  position: absolute;
+}
+
+text > * {font-size:50px;transform:translateY(75%);offset-path: var(--circle-up-path);offset-distance: calc(8% + var(--n) * 89.5% / var(--total));}
+
+belt > * {
+  transform: translateY(-40px);
+  offset-path: var(--circle-down-path);
+  offset-distance: calc(7% + var(--n) * 91% / var(--total));
+  width: 18px; height: 16px;
+  background: #000;
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);}
+belt > *:nth-child(even) {clip-path: circle(30%);}
+
+tree > * {
+  width: 2px; height: 30px;
+  transform: translateY(-98px);
+  background: #000;
+  offset-path: var(--circle-down-path);
+  offset-distance: calc(5% + var(--n) * 98% / var(--total));
+}
+  tree > *:after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: calc(50% - 4px);
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #000;
+  }
+
+  tree > *:nth-child(even) {height: 15px;transform: translateY(-90px);}
+
+
+tree[outer] > * {
+  offset-path: var(--circle-up-path);
+  transform: translateY(128px);
+  height: 60px;}
+tree[outer] > *:nth-child(odd) {height: 30px;}
+
+
+star > * {offset-path: var(--circle-down-path);offset-distance: calc(6% + var(--n) * 93% / var(--total));transform: translateY(-15px);}
+  star > *:after {
+    content: '***';
+    font-family: verdana;
+    color: #000;
+    font-size: 13px;}
+
+circle {
+  position: absolute;
+  width: 30%; height: 30%;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border: 6px solid #000;
+  border-style: double solid solid double;
+  border-radius: 50%;
+  background: #fff;
+}
+
+arrow:after, arrow:before {
+  content: '';
+  position: absolute;
+  top: calc(50% - 11px);
+  width: 20px; height: 20px;
+  transform: rotateX(45deg) rotate(45deg);
+  border: 2px solid #000;
+  background: #fff;
+}
+arrow:before {left: -13px;}
+arrow:after {right: -13px;}

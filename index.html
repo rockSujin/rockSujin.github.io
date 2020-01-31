@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>title</title>
+</head>
+<body>
+
+    <div class="header" style="display:none">
+        <h1><a href="#"></a></h1>
+    </div>
+    <div class="container">
+        <div class="navbar">
+            <ul class="main_nav">
+                <li class="active"><a href="#">INFORMATION</a></li>
+                <li><a href="#">CSS</a></li>
+                <li><a href="#">MENU</a></li>
+                <li><a href="#">MENU</a></li>
+            </ul>
+        </div>
+        <div class="content st_life" style="display:none">
+            <div class="frame">
+                <div class="shadow"></div>
+                <div class="apple">
+                    <div class="lyr_01"></div>
+                    <div class="lyr_02"></div>
+                    <div class="lyr_03"></div>
+                    <div class="lyr_04"></div>
+                </div>
+            </div>
+        </div>
+        <div class="test">
+            <graph>
+              <text split>CSS is Awesome</text>
+              <belt split="21"></belt>
+              <tree split="13"></tree>
+              <tree split="13" outer></tree>
+              <star split="21"></star>
+              <circle></circle>
+              <arrow></arrow>
+            </graph>
+
+
+        </div>
+    </div>
+
+    <script>
+      /* You may want to use splitting.js */
+     Array.from(document.querySelectorAll('[split]') || []).forEach(el => {
+       let text = el.innerHTML.trim();
+       let total = text.length || Number(el.getAttribute('split')) || 0;
+       el.style.setProperty('--total', total);
+       el.innerHTML = Array(total).fill(0)
+         .map((n, i) => `<span style="--n:${i}">${text[i]||''}</span>`)
+         .join('');
+     });
+    </script>
+</body>
+</html>
